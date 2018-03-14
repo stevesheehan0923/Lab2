@@ -24,8 +24,22 @@ public class Deck {
 		}
 	}
 
-
-
-
-
+    public int getRemaining(Object eNum) {
+        int remainder = 0;
+        if(eNum instanceof eSuit) {
+            for (Card c : this.deck) {
+                if (c.getSuit() == eNum) {
+                    remainder += 1;
+                }
+            }
+        }
+        else {
+            for (Card c : this.deck) {
+                if (c.getRank() == eNum) {
+                    remainder += 1;
+                }
+            }
+        }  
+        return remainder;
+    }
 }
